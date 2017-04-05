@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'jamielob:reloader',
-  version: '1.2.3',
+  name: 'fermuch:reloader',
+  version: '1.2.4',
   summary: 'More control over hot code push reloading',
-  git: 'https://github.com/jamielob/reloader/',
+  git: 'https://github.com/fermuch/reloader/',
   documentation: 'README.md'
 });
 
@@ -22,10 +22,11 @@ Package.onUse(function(api) {
            'tracker',
            'launch-screen'], 'client');
 
-  api.mainModule('reloader.js', 'web.cordova');
-  api.mainModule('browser.js', 'web.browser');
+  // api.mainModule('reloader.js', 'web.cordova');
+  // api.mainModule('reloader.js', 'web.browser');
+  // api.mainModule('browser.js', 'web.browser');
   //  when testing, uncomment this line:
-  // api.mainModule('reloader.js', 'client');
+  api.mainModule('reloader.js', 'client');
 
   api.export('Reloader', 'client');
 });
@@ -36,7 +37,7 @@ Npm.depends({
 });
 
 Package.onTest(function(api) {
-  api.use('jamielob:reloader', 'client')
+  api.use('fermuch:reloader', 'client')
 
   api.use(['ecmascript',
            'underscore',
